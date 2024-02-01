@@ -5,7 +5,7 @@ import (
 	"github.com/juniorWMA/firstCrud/pkg/controllers"
 )
 
-var GetRoutesCourse = func(r mux.Router) {
+var GetRoutesCourse = func(r *mux.Router) {
 	r.HandleFunc("/courses", controllers.GetAllCourses).Methods("GET")
 	r.HandleFunc("/course", controllers.CreateCourse).Methods("POST")
 }
