@@ -12,7 +12,7 @@ var NewCourse models.Course
 
 func GetAllCourses(w http.ResponseWriter, r *http.Request) {
 	
-	courses := models.GetAllCourses()
+	courses := models.GetAllCourse()
 	res, err := json.Marshal(courses)
 	if err != nil {
 		log.Fatal(err)

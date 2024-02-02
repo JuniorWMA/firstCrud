@@ -5,18 +5,22 @@ import (
 	"github.com/juniorWMA/firstCrud/pkg/configs"
 )
 
-var DB *gorm.DB
+var db *gorm.DB
+
+
+func init()  {
+	configs.Connect()
+	db = configs.GetDB()
+	db.AutoMigrate(&Course{})
+	
+}
 
 type Course struct {
 	gorm.Model
-	Name     string  `gorm:""json:"name,omitempty"`
-	Category string  `json:"category,omitempty"`
-	Price    float64 `json:"price,omitempty"`
-	Duration int     `json:"duration,omitempty"`
+	Name     string  `gorm:""json:"name"`
+	Category string  `json:"category"`
+	Price    float64 `json:"price"`
+	Duration int     `json:"duration"`
 }
 
-func InitDB()  {
-	configs.ConnectDB()
-	db := configs.GetConnectDB()
-	db.AutoMigrate(&Course{})
-}
+

@@ -12,7 +12,7 @@ import (
 func CreateCourse(w http.ResponseWriter, r *http.Request) {
 	course := &models.Course{}
 	utils.ParseBody( r,  course)
-	c := course.CreateCourse()
+	c := course.CreateBCourse()
 	res, err := json.Marshal(c)
 	if err != nil {
 		log.Fatal(err)

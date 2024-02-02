@@ -1,8 +1,8 @@
 package models
 
 
-func (c *Course) CreateCourse() *Course {
-	DB.NewRecord(c)
-	DB.Create(&c)
-	return c
+func (b *Course) CreateBCourse() *Course {
+	db.NewRecord(b)
+	db.Create(&b)
+	return b
 }
